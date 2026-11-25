@@ -8,7 +8,7 @@ GODOT   ?= /Applications/Godot.app/Contents/MacOS/Godot
 BL      := $(BLENDER) -b --factory-startup --python
 GD      := $(GODOT) --headless --path game
 
-.PHONY: all help textures assets kage knight viking daggers halberd handblade blades shrine export godot-import validate \
+.PHONY: all help textures assets kage knight viking ronin daggers halberd handblade blades katana shrine export godot-import validate \
         validate-blender validate-godot renders renders-blender renders-godot clean-generated
 
 all: textures assets export godot-import validate  ## full pipeline
@@ -19,7 +19,7 @@ help:
 textures:  ## procedural ink textures -> game/textures/ink
 	$(BL) tools/textures/generate_ink_textures.py
 
-assets: kage knight viking daggers halberd handblade blades shrine  ## rebuild every .blend source
+assets: kage knight viking ronin daggers halberd handblade blades katana shrine  ## rebuild every .blend source
 
 kage:  ## assassin: body, garments, rig, weights, rig-test actions
 	$(BL) tools/blender/build_kage.py
@@ -38,6 +38,12 @@ blades:  ## greatsword, broadsword, naginata
 
 handblade:  ## Kuzuri katar-style handblade (pair)
 	$(BL) tools/blender/build_handblade.py
+
+ronin:  ## Mugai, the Straw Ronin (shares Kage's skeleton)
+	$(BL) tools/blender/build_ronin.py
+
+katana:  ## katana + white saya
+	$(BL) tools/blender/build_katana.py
 
 daggers:  ## Kagenui dual daggers + saya
 	$(BL) tools/blender/build_daggers.py
@@ -74,6 +80,8 @@ renders-blender:
 	SUMI_PREVIEW_DIR=$(CURDIR)/docs/renders/blender $(BL) tools/blender/build_handblade.py -- --preview
 	SUMI_PREVIEW_DIR=$(CURDIR)/docs/renders/blender $(BL) tools/blender/build_blades.py -- --preview
 	SUMI_PREVIEW_DIR=$(CURDIR)/docs/renders/blender $(BL) tools/blender/build_daggers.py -- --preview
+	SUMI_PREVIEW_DIR=$(CURDIR)/docs/renders/blender $(BL) tools/blender/build_ronin.py -- --preview
+	SUMI_PREVIEW_DIR=$(CURDIR)/docs/renders/blender $(BL) tools/blender/build_katana.py -- --preview
 	SUMI_PREVIEW_DIR=$(CURDIR)/docs/renders/blender $(BL) tools/blender/build_shrine_blockout.py -- --preview
 
 renders-godot:

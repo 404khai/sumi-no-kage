@@ -155,6 +155,8 @@ def M(*dicts):
 
 
 # ------------------------------------------------------------------- dagger set
+# Superseded by daggers.py (pose library + baked pose-to-pose clips); kept for
+# reference of the original blocking poses, not called.
 def dagger_clips(A):
     guard = lambda b=0.0: M(torso(b=b), legs_guard(), arms_dagger_guard(b))  # noqa: E731
     G = guard()
@@ -308,8 +310,10 @@ def shared_clips(A):
 
 
 def build(K, arm):
+    """Returns clip event data (hit/link/trail timing, root motion) for the game."""
     A = Author(K, arm)
-    dagger_clips(A)
     halberd_clips(A)
     halberd_clips(A, family="Greatsword", off=0.13)
     shared_clips(A)
+    import daggers  # pose-to-pose dagger style: pose library, locomotion, five-hit combo
+    return daggers.build(K, arm)

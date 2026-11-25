@@ -38,6 +38,7 @@ func _think(delta: float) -> void:
 	var to := player.global_position - global_position
 	to.y = 0
 	var d := to.length()
+	look_target = player if _notice else null
 	if not _notice:
 		_notice = d < aggro_range
 		locomotion(Vector3.ZERO, delta)
@@ -52,9 +53,8 @@ func _think(delta: float) -> void:
 		else:
 			# circle the player while waiting for an opening
 			var side := to.normalized().cross(Vector3.UP) * _strafe
-			locomotion(side * 0.45, delta, 0.5)
-			face(to, delta)
-	elif state == State.ATTACK and _attack_t < float(_attack["hit"]) / attack_speed * 0.6:
+			locomotion(side * 0.6, delta, 0.6, player)
+	elif state == State.ATTACK and _attack_t < first_hit_time() * 0.6:
 		face(to, delta, 4.0)
 
 

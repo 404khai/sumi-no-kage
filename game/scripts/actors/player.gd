@@ -95,7 +95,9 @@ func _human(delta: float) -> void:
 			start_attack("light", _soft_target())
 	elif Input.is_action_just_pressed("attack_heavy"):
 		start_attack("heavy", _soft_target())
-	locomotion(dir, delta)
+	# lock-on: strafe around the target in guard; otherwise run, or walk with Ctrl/Alt or a half-tilted stick
+	locomotion(dir, delta, 1.0, lock_target, Input.is_action_pressed("walk") or (dir.length() > 0.05 and dir.length() < 0.55))
+	look_target = lock_target if lock_target else _nearest_enemy(6.0)
 	if state == State.BLOCK and lock_target:
 		face(lock_target.global_position - global_position, delta)
 
@@ -139,6 +141,13 @@ func _bot(delta: float) -> void:
 	var to := target.global_position - global_position
 	to.y = 0
 	var reach := float((moves["light"] as Array)[0]["reach"])
+	# read telegraphs like a player would: dodge out of a foe's wind-up
+	for n in get_tree().get_nodes_in_group("enemies"):
+		var e := n as Fighter
+		if e.state == State.ATTACK and e.global_position.distance_to(global_position) < 3.2 \
+				and e._attack_t > e.first_hit_time() * 0.45 and e._attack_t < e.first_hit_time() * 0.8:
+			if dodge((global_position - e.global_position).normalized().rotated(Vector3.UP, 0.9)):
+				return
 	if target.state == State.STAGGER and to.length() < 3.0:
 		try_finisher()
 	elif to.length() > reach * 0.9:
@@ -146,7 +155,9 @@ func _bot(delta: float) -> void:
 			_step_cd = 2.0
 		locomotion(to.normalized(), delta)
 	elif state == State.MOVE or state == State.ATTACK:
-		if fmod(_bot_t, 3.0) < 0.05:
+		if combo == 2 and state == State.ATTACK and fmod(_bot_t, 6.0) < 3.0:
+			start_attack("heavy", target)   # exercise the combo branch (L3 -> rising cut)
+		elif fmod(_bot_t, 3.0) < 0.05 and state == State.MOVE:
 			start_attack("heavy", target)
 		else:
 			start_attack("light", target)

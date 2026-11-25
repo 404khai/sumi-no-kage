@@ -1,31 +1,178 @@
 {
-  "_comment": "Combat data per weapon family. Times are seconds from clip start (clips are 30 fps). reach in metres, arc in degrees (360 = all around), lunge = metres travelled during the swing, stagger = posture damage (>=1 staggers), finisher needs a staggered target.",
+  "_comment": "Combat data per weapon family. reach in metres, arc in degrees (360 = all around), stagger = posture damage (>=1 staggers), finisher needs a staggered target. Multi-hit clips split damage/stagger across their hits. Timing (hits, link/combo window, trails) and root motion come from clip_events.json (generated with the clips); hit/cancel/lunge here are only the fallback for families whose clips have no generated events. heavy_branch: heavy pressed during a light chain from the second hit on. walk_speed: lock-on strafe / walk pace.",
   "Daggers": {
-    "stance": "Stance_DualDaggers_Idle", "run": "Loop_Run_Daggers", "block": "Stance_Block_Daggers", "run_speed": 6.2,
+    "stance": "Stance_DualDaggers_Idle",
+    "run": "Loop_Run_Daggers",
+    "block": "Stance_Block_Daggers",
+    "run_speed": 6.2,
+    "walk_speed": 2.3,
+    "loco": {
+      "walk_f": "Loop_Walk_Daggers_F",
+      "walk_b": "Loop_Walk_Daggers_B",
+      "walk_l": "Loop_Walk_Daggers_L",
+      "walk_r": "Loop_Walk_Daggers_R"
+    },
     "light": [
-      {"anim": "Atk_Daggers_L1", "damage": 11, "reach": 1.8, "arc": 120, "hit": 0.27, "cancel": 0.40, "lunge": 1.2, "stagger": 0.15},
-      {"anim": "Atk_Daggers_L2", "damage": 12, "reach": 1.8, "arc": 110, "hit": 0.27, "cancel": 0.40, "lunge": 1.2, "stagger": 0.15},
-      {"anim": "Atk_Daggers_L3", "damage": 18, "reach": 2.2, "arc": 60, "hit": 0.33, "cancel": 0.55, "lunge": 2.6, "stagger": 0.35}
+      {
+        "name": "Kage-giri",
+        "anim": "Atk_Daggers_L1",
+        "damage": 14,
+        "reach": 1.9,
+        "arc": 130,
+        "stagger": 0.12
+      },
+      {
+        "name": "Mikazuki",
+        "anim": "Atk_Daggers_L2",
+        "damage": 15,
+        "reach": 1.9,
+        "arc": 120,
+        "stagger": 0.12
+      },
+      {
+        "name": "Tsubame",
+        "anim": "Atk_Daggers_L3",
+        "damage": 16,
+        "reach": 2.0,
+        "arc": 120,
+        "stagger": 0.15
+      },
+      {
+        "name": "Senpu",
+        "anim": "Atk_Daggers_L4",
+        "damage": 24,
+        "reach": 2.0,
+        "arc": 360,
+        "stagger": 0.25
+      },
+      {
+        "name": "Kage-tsuki",
+        "anim": "Atk_Daggers_L5",
+        "damage": 30,
+        "reach": 2.4,
+        "arc": 60,
+        "stagger": 0.45
+      }
     ],
-    "heavy": {"anim": "Atk_Daggers_Heavy", "damage": 26, "reach": 2.1, "arc": 360, "hit": 0.50, "cancel": 0.80, "lunge": 0.6, "stagger": 0.6},
-    "finisher": {"anim": "Atk_Daggers_Finisher", "damage": 999, "reach": 2.4, "arc": 140, "hit": 0.43, "cancel": 1.0, "lunge": 2.0, "stagger": 0}
+    "heavy": {
+      "name": "Kage-otoshi",
+      "anim": "Atk_Daggers_Heavy",
+      "damage": 28,
+      "reach": 2.1,
+      "arc": 100,
+      "stagger": 0.7
+    },
+    "heavy_branch": {
+      "name": "Tsubame-gaeshi",
+      "anim": "Atk_Daggers_Rising",
+      "damage": 20,
+      "reach": 2.0,
+      "arc": 110,
+      "stagger": 1.0
+    },
+    "finisher": {
+      "name": "Kage-nui",
+      "anim": "Atk_Daggers_Finisher",
+      "damage": 999,
+      "reach": 2.4,
+      "arc": 140,
+      "stagger": 0
+    }
   },
   "Halberd": {
-    "stance": "Stance_Halberd_Idle", "run": "Loop_Run_Halberd", "block": "Stance_Block_Halberd", "run_speed": 5.2,
+    "stance": "Stance_Halberd_Idle",
+    "run": "Loop_Run_Halberd",
+    "block": "Stance_Block_Halberd",
+    "run_speed": 5.2,
     "light": [
-      {"anim": "Atk_Halberd_L1", "damage": 17, "reach": 3.0, "arc": 150, "hit": 0.38, "cancel": 0.6, "lunge": 0.8, "stagger": 0.3},
-      {"anim": "Atk_Halberd_L2", "damage": 19, "reach": 3.4, "arc": 45, "hit": 0.35, "cancel": 0.6, "lunge": 1.6, "stagger": 0.35}
+      {
+        "anim": "Atk_Halberd_L1",
+        "damage": 17,
+        "reach": 3.0,
+        "arc": 150,
+        "hit": 0.38,
+        "cancel": 0.6,
+        "lunge": 0.8,
+        "stagger": 0.3
+      },
+      {
+        "anim": "Atk_Halberd_L2",
+        "damage": 19,
+        "reach": 3.4,
+        "arc": 45,
+        "hit": 0.35,
+        "cancel": 0.6,
+        "lunge": 1.6,
+        "stagger": 0.35
+      }
     ],
-    "heavy": {"anim": "Atk_Halberd_Heavy", "damage": 40, "reach": 3.2, "arc": 70, "hit": 0.50, "cancel": 0.95, "lunge": 1.0, "stagger": 1.0},
-    "finisher": {"anim": "Atk_Halberd_Finisher", "damage": 999, "reach": 3.0, "arc": 120, "hit": 0.47, "cancel": 1.1, "lunge": 1.2, "stagger": 0}
+    "heavy": {
+      "anim": "Atk_Halberd_Heavy",
+      "damage": 40,
+      "reach": 3.2,
+      "arc": 70,
+      "hit": 0.5,
+      "cancel": 0.95,
+      "lunge": 1.0,
+      "stagger": 1.0
+    },
+    "finisher": {
+      "anim": "Atk_Halberd_Finisher",
+      "damage": 999,
+      "reach": 3.0,
+      "arc": 120,
+      "hit": 0.47,
+      "cancel": 1.1,
+      "lunge": 1.2,
+      "stagger": 0
+    }
   },
   "Greatsword": {
-    "stance": "Stance_Greatsword_Idle", "run": "Loop_Run_Greatsword", "block": "Stance_Block_Greatsword", "run_speed": 5.0,
+    "stance": "Stance_Greatsword_Idle",
+    "run": "Loop_Run_Greatsword",
+    "block": "Stance_Block_Greatsword",
+    "run_speed": 5.0,
     "light": [
-      {"anim": "Atk_Greatsword_L1", "damage": 20, "reach": 2.6, "arc": 160, "hit": 0.38, "cancel": 0.65, "lunge": 0.9, "stagger": 0.35},
-      {"anim": "Atk_Greatsword_L2", "damage": 22, "reach": 2.8, "arc": 50, "hit": 0.35, "cancel": 0.65, "lunge": 1.5, "stagger": 0.4}
+      {
+        "anim": "Atk_Greatsword_L1",
+        "damage": 20,
+        "reach": 2.6,
+        "arc": 160,
+        "hit": 0.38,
+        "cancel": 0.65,
+        "lunge": 0.9,
+        "stagger": 0.35
+      },
+      {
+        "anim": "Atk_Greatsword_L2",
+        "damage": 22,
+        "reach": 2.8,
+        "arc": 50,
+        "hit": 0.35,
+        "cancel": 0.65,
+        "lunge": 1.5,
+        "stagger": 0.4
+      }
     ],
-    "heavy": {"anim": "Atk_Greatsword_Heavy", "damage": 48, "reach": 2.8, "arc": 70, "hit": 0.50, "cancel": 1.0, "lunge": 1.0, "stagger": 1.0},
-    "finisher": {"anim": "Atk_Greatsword_Finisher", "damage": 999, "reach": 2.8, "arc": 120, "hit": 0.47, "cancel": 1.1, "lunge": 1.0, "stagger": 0}
+    "heavy": {
+      "anim": "Atk_Greatsword_Heavy",
+      "damage": 48,
+      "reach": 2.8,
+      "arc": 70,
+      "hit": 0.5,
+      "cancel": 1.0,
+      "lunge": 1.0,
+      "stagger": 1.0
+    },
+    "finisher": {
+      "anim": "Atk_Greatsword_Finisher",
+      "damage": 999,
+      "reach": 2.8,
+      "arc": 120,
+      "hit": 0.47,
+      "cancel": 1.1,
+      "lunge": 1.0,
+      "stagger": 0
+    }
   }
 }

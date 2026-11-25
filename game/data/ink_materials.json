@@ -470,6 +470,203 @@
         ],
         "cavity_strength": 0.4
       }
+    },
+    "M_Ronin_Skin": {
+      "color": [
+        0.62,
+        0.6,
+        0.56
+      ],
+      "outline": 0.0024,
+      "params": {
+        "shadow_level": 0.55,
+        "rim_ink": 0.45,
+        "cavity_strength": 0.95
+      }
+    },
+    "M_Ronin_Robe": {
+      "color": [
+        0.085,
+        0.085,
+        0.09
+      ],
+      "params": {
+        "streak_strength": 0.25,
+        "streak_scale": [
+          2.0,
+          6.0
+        ]
+      }
+    },
+    "M_Ronin_Bandage": {
+      "color": [
+        0.84,
+        0.82,
+        0.77
+      ],
+      "params": {
+        "streak_strength": 0.35,
+        "streak_scale": [
+          1.0,
+          10.0
+        ]
+      }
+    },
+    "M_Ronin_Straw": {
+      "color": [
+        0.8,
+        0.75,
+        0.62
+      ],
+      "outline": 0.0032,
+      "params": {
+        "shadow_level": 0.55,
+        "rim_ink": 0.7,
+        "band_noise": 0.6,
+        "streak_strength": 0.5,
+        "streak_scale": [
+          8.0,
+          2.0
+        ]
+      }
+    },
+    "M_Ronin_StrawShade": {
+      "color": [
+        0.56,
+        0.5,
+        0.38
+      ],
+      "outline": 0.0032,
+      "params": {
+        "shadow_level": 0.55,
+        "rim_ink": 0.7,
+        "band_noise": 0.6,
+        "streak_strength": 0.5,
+        "streak_scale": [
+          8.0,
+          2.0
+        ]
+      }
+    },
+    "M_Ronin_Hair": {
+      "color": [
+        0.46,
+        0.4,
+        0.31
+      ],
+      "params": {
+        "streak_strength": 0.5,
+        "streak_scale": [
+          2.0,
+          10.0
+        ]
+      }
+    },
+    "M_Ronin_Obi": {
+      "color": [
+        0.4,
+        0.4,
+        0.4
+      ],
+      "params": {
+        "streak_strength": 0.3
+      }
+    },
+    "M_Ronin_Sandal": {
+      "color": [
+        0.3,
+        0.29,
+        0.27
+      ],
+      "params": {
+        "streak_strength": 0.3
+      }
+    },
+    "M_Katana_Blade": {
+      "color": [
+        0.84,
+        0.84,
+        0.84
+      ],
+      "outline": 0.0018,
+      "params": {
+        "shadow_level": 0.7,
+        "rim_ink": 0.25,
+        "cavity_strength": 0.3,
+        "streak_strength": 0.2
+      }
+    },
+    "M_Katana_Hamon": {
+      "color": [
+        0.95,
+        0.95,
+        0.94
+      ],
+      "outline": 0.0018,
+      "params": {
+        "shadow_level": 0.7,
+        "rim_ink": 0.25,
+        "cavity_strength": 0.3,
+        "streak_strength": 0.2
+      }
+    },
+    "M_Katana_Ito": {
+      "color": [
+        0.07,
+        0.07,
+        0.07
+      ],
+      "outline": 0.0015,
+      "params": {
+        "cavity_strength": 0.9
+      }
+    },
+    "M_Katana_Same": {
+      "color": [
+        0.9,
+        0.89,
+        0.86
+      ],
+      "params": {
+        "streak_strength": 0.35,
+        "streak_scale": [
+          1.0,
+          10.0
+        ]
+      }
+    },
+    "M_Katana_Fittings": {
+      "color": [
+        0.58,
+        0.45,
+        0.28
+      ],
+      "outline": 0.0015
+    },
+    "M_Katana_Saya": {
+      "color": [
+        0.88,
+        0.87,
+        0.84
+      ],
+      "params": {
+        "streak_strength": 0.35,
+        "streak_scale": [
+          1.0,
+          10.0
+        ]
+      }
+    },
+    "M_Katana_Band": {
+      "color": [
+        0.06,
+        0.06,
+        0.06
+      ],
+      "outline": 0.0015,
+      "params": {
+        "cavity_strength": 0.9
+      }
     }
   }
 }

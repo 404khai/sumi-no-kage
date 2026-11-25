@@ -205,6 +205,52 @@
       }
     },
     {
+      "id": "ronin",
+      "kind": "character",
+      "status": "final-v1",
+      "build": "tools/blender/build_ronin.py",
+      "source": "assets_src/characters/ronin/ronin.blend",
+      "collection": "Ronin",
+      "output": "game/assets/characters/ronin/ronin.glb",
+      "animations": true,
+      "budget": {
+        "tris": 45000,
+        "materials": 10,
+        "bones": 100,
+        "max_influences": 4
+      },
+      "expect": {
+        "height": [
+          1.75,
+          1.9
+        ],
+        "_height_note": "includes the kasa",
+        "actions": [
+          "RigTest_ROM",
+          "Stance_DualDaggers_Idle",
+          "Stance_Halberd_Idle",
+          "Stance_Greatsword_Idle",
+          "Loop_Run_Daggers",
+          "Loop_Run_Halberd",
+          "Loop_Run_Greatsword",
+          "Atk_Daggers_L1",
+          "Atk_Daggers_Heavy",
+          "Atk_Halberd_L1",
+          "Atk_Greatsword_Heavy",
+          "Act_Dodge",
+          "Act_Hit",
+          "Act_Stagger",
+          "Act_Death"
+        ],
+        "sockets": [
+          "LeftHandWeapon",
+          "RightHandWeapon",
+          "LeftSheathBack",
+          "RightSheathBack"
+        ]
+      }
+    },
+    {
       "id": "halberd",
       "kind": "weapon",
       "status": "final-v1",
@@ -326,6 +372,53 @@
           "Socket_BladeBase",
           "Socket_BladeTip",
           "Socket_OffHand"
+        ]
+      }
+    },
+    {
+      "id": "katana",
+      "kind": "weapon",
+      "status": "final-v1",
+      "build": "tools/blender/build_katana.py",
+      "source": "assets_src/weapons/katana/katana.blend",
+      "collection": "Export_Katana",
+      "output": "game/assets/weapons/katana/katana.glb",
+      "animations": false,
+      "budget": {
+        "tris": 6000,
+        "materials": 7
+      },
+      "expect": {
+        "length": [
+          0.95,
+          1.1
+        ],
+        "nodes": [
+          "Socket_BladeBase",
+          "Socket_BladeTip",
+          "Socket_OffHand"
+        ]
+      }
+    },
+    {
+      "id": "katana_saya",
+      "kind": "weapon",
+      "status": "final-v1",
+      "build": "tools/blender/build_katana.py",
+      "source": "assets_src/weapons/katana/katana.blend",
+      "collection": "Export_KatanaSaya",
+      "output": "game/assets/weapons/katana/katana_saya.glb",
+      "animations": false,
+      "budget": {
+        "tris": 3000,
+        "materials": 4
+      },
+      "expect": {
+        "origin_inside": false,
+        "_origin_note": "saya shares the dagger grip origin so it lines up when sheathed",
+        "length": [
+          0.7,
+          0.85
         ]
       }
     }

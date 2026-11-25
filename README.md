@@ -20,7 +20,9 @@ Controls: WASD move · mouse look · LMB light combo · RMB heavy · Shift block
 Combat tuning lives in `game/data/movesets.json`; automated playtest: `godot --path game res://scenes/game/game.tscn -- --autoplay --shots=5,12,20`.
 Showcase keys: `1`–`6` cameras · `C` next character · `W` next weapon · `Space` Phantom Step · `F` spin-slash trail demo.
 
-Roster: Kage (dual daggers), the Ashen Knight (halberd), the Viking Berserker (greatsword). Weapons: dual daggers, Kuzuri handblades, halberd, naginata, greatsword, broadsword. See [docs/characters_knight_viking.md](docs/characters_knight_viking.md).
+Roster: Kage (dual daggers), the Ashen Knight (halberd), the Viking Berserker (greatsword), Mugai the Straw Ronin (katana). Weapons: dual daggers, Kuzuri handblades, halberd, naginata, greatsword, broadsword, katana (key 7). See [docs/characters_knight_viking.md](docs/characters_knight_viking.md) and [docs/character_ronin.md](docs/character_ronin.md).
+Playtest any roster member: `godot --path game res://scenes/game/game.tscn -- --autoplay --character=ronin --shots=3,6`.
+Rig, pose library and dagger combo: [docs/rig_and_animation.md](docs/rig_and_animation.md).
 
 Requires Blender 5.x and Godot 4.7 (paths are overridable: `BLENDER=… GODOT=… make all`). Python is only Blender's bundled interpreter plus the system `python3` for one small config script. No pip packages.
 

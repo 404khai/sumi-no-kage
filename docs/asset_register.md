@@ -17,6 +17,10 @@ Status keys: **final-v1**, meaning production quality for this phase, validated 
 | 12 | Kuzuri handblades | `assets_src/weapons/handblade/handblade.blend` → `handblade.glb` | final-v1 | 1.3k tris |
 | 14 | Greatsword, broadsword, naginata | `assets_src/weapons/{greatsword,broadsword,naginata}/` → `*.glb` | final-v1 | 2.1k / 1.0k / 3.4k tris |
 | 15 | Moveset + gameplay | `tools/blender/lib/moves.py`, `game/data/movesets.json`, `game/scripts/{actors,game,ui,core}/` | wip (playable slice v1) | 3 weapon families |
+| 16 | Mugai, the Straw Ronin | `assets_src/characters/ronin/ronin.blend` → `ronin.glb` | final-v1 | 44.9k tris · shared rig + 3 mino chains |
+| 17 | Katana + saya | `assets_src/weapons/katana/katana.blend` → `katana.glb`, `katana_saya.glb` | final-v1 | 4.8k + 1.5k tris · 1.03 m |
+| 18 | Control rig (IK/FK, foot roll, torso, snapping, panel) | `tools/blender/lib/kage_rig.py`, `kage_rig_ui.py` | final-v1 | all four characters |
+| 19 | Dagger pose library + clips | `tools/blender/lib/{anim_engine,daggers}.py` → `game/data/clip_events.json` | wip | 21 poses · 15 baked clips |
 | 13 | Roster/weapon data | `game/data/characters/*.tres`, `game/data/weapons/*.tres` | final-v1 | any character × any weapon |
 | 6 | Environment concept | `docs/environment_kurogane_shrine.md`, `docs/renders/godot_env*.png` | final-v1 (concept) | — |
 | 6a | Environment blockout | `assets_src/environments/kurogane_shrine/…blend` → `kurogane_shrine_blockout.glb` | **blockout** | 14,660 tris · 23 colliders · 6 markers |
