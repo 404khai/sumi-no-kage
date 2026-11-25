@@ -26,6 +26,14 @@ Rig, pose library and dagger combo: [docs/rig_and_animation.md](docs/rig_and_ani
 
 Requires Blender 5.x and Godot 4.7 (paths are overridable: `BLENDER=… GODOT=… make all`). Python is only Blender's bundled interpreter plus the system `python3` for one small config script. No pip packages.
 
+## Platformer prototype (branch `feat/platformer`)
+
+A side-scrolling take on the same world: descend from the Kurogane Shrine through the mine beneath it, past goons, an Oni Captain and the Drowned Maw, with three coloured-ink heroes (Swordsman, Gunslinger, Archer) you can swap between at any time. A rift to a neon far shore is sealed, for now. See [docs/platformer.md](docs/platformer.md).
+
+```sh
+/Applications/Godot.app/Contents/MacOS/Godot --path game res://scenes/platformer/platformer.tscn
+```
+
 ## Layout
 
 ```
