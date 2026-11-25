@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="WeaponDefinition" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/weapon_definition.gd" id="1_def"]
+[ext_resource type="PackedScene" path="res://assets/weapons/kagenui_daggers/kagenui_dagger.glb" id="2_dag"]
+[ext_resource type="PackedScene" path="res://assets/weapons/kagenui_daggers/kagenui_saya.glb" id="3_saya"]
+
+[resource]
+script = ExtResource("1_def")
+id = &"kagenui"
+display_name = "Kagenui — Shadow-Stitch Daggers"
+category = 0
+weapon_scene = ExtResource("2_dag")
+sheath_scene = ExtResource("3_saya")
+dual_wield = true
+grip_mode = 1
+grip_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+sheath_offset_main = Transform3D(0.978, 0, -0.208, 0, 1, 0, 0.208, 0, 0.978, 0, -0.035, -0.055)
+sheath_offset_off = Transform3D(0.978, 0, 0.208, 0, 1, 0, -0.208, 0, 0.978, 0, 0.01, -0.055)
+trail_lifetime = 0.28
+stance_idle = &"Stance_DualDaggers_Idle"
+move_speed_scale = 1.15
+phantom_step_distance = 4.0
+move_family = &"Daggers"

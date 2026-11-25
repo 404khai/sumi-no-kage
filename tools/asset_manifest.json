@@ -1,0 +1,333 @@
+{
+  "_comment": "Single source of truth for source -> game asset mapping, budgets and status. Read by export_assets.py, validate_blender.py and game/tools/validate_assets.gd.",
+  "assets": [
+    {
+      "id": "kage",
+      "kind": "character",
+      "status": "final-v1",
+      "build": "tools/blender/build_kage.py",
+      "source": "assets_src/characters/kage/kage.blend",
+      "collection": "Kage",
+      "output": "game/assets/characters/kage/kage.glb",
+      "animations": true,
+      "budget": {
+        "tris": 45000,
+        "materials": 10,
+        "bones": 100,
+        "max_influences": 4
+      },
+      "expect": {
+        "height": [
+          1.7,
+          1.85
+        ],
+        "actions": [
+          "RigTest_ROM",
+          "Stance_DualDaggers_Idle",
+          "Stance_Halberd_Idle",
+          "Stance_Greatsword_Idle",
+          "Loop_Run_Daggers",
+          "Loop_Run_Halberd",
+          "Loop_Run_Greatsword",
+          "Atk_Daggers_L1",
+          "Atk_Daggers_Heavy",
+          "Atk_Halberd_L1",
+          "Atk_Greatsword_Heavy",
+          "Act_Dodge",
+          "Act_Hit",
+          "Act_Stagger",
+          "Act_Death"
+        ],
+        "sockets": [
+          "LeftHandWeapon",
+          "RightHandWeapon",
+          "LeftSheathBack",
+          "RightSheathBack"
+        ]
+      }
+    },
+    {
+      "id": "kagenui_dagger",
+      "kind": "weapon",
+      "status": "final-v1",
+      "build": "tools/blender/build_daggers.py",
+      "source": "assets_src/weapons/kagenui_daggers/kagenui_daggers.blend",
+      "collection": "Export_Dagger",
+      "output": "game/assets/weapons/kagenui_daggers/kagenui_dagger.glb",
+      "animations": false,
+      "budget": {
+        "tris": 7000,
+        "materials": 5
+      },
+      "expect": {
+        "length": [
+          0.38,
+          0.45
+        ],
+        "_length_note": "kashira-to-tip 0.364 m plus the red tassel",
+        "nodes": [
+          "Socket_BladeBase",
+          "Socket_BladeTip"
+        ]
+      }
+    },
+    {
+      "id": "kagenui_saya",
+      "kind": "weapon",
+      "status": "final-v1",
+      "build": "tools/blender/build_daggers.py",
+      "source": "assets_src/weapons/kagenui_daggers/kagenui_daggers.blend",
+      "collection": "Export_Saya",
+      "output": "game/assets/weapons/kagenui_daggers/kagenui_saya.glb",
+      "animations": false,
+      "budget": {
+        "tris": 2500,
+        "materials": 3
+      },
+      "expect": {
+        "length": [
+          0.22,
+          0.28
+        ],
+        "origin_inside": false,
+        "_origin_note": "saya shares the dagger grip origin so it lines up when sheathed"
+      }
+    },
+    {
+      "id": "kurogane_shrine_blockout",
+      "kind": "environment",
+      "status": "blockout",
+      "build": "tools/blender/build_shrine_blockout.py",
+      "source": "assets_src/environments/kurogane_shrine/kurogane_shrine_blockout.blend",
+      "collection": "Export_ShrineBlockout",
+      "output": "game/assets/environments/kurogane_shrine/kurogane_shrine_blockout.glb",
+      "animations": false,
+      "budget": {
+        "tris": 40000,
+        "materials": 10
+      },
+      "expect": {
+        "nodes": [
+          "Marker_PlayerStart"
+        ],
+        "colliders_min": 10
+      }
+    },
+    {
+      "id": "knight",
+      "kind": "character",
+      "status": "final-v1",
+      "build": "tools/blender/build_knight.py",
+      "source": "assets_src/characters/knight/knight.blend",
+      "collection": "Knight",
+      "output": "game/assets/characters/knight/knight.glb",
+      "animations": true,
+      "budget": {
+        "tris": 45000,
+        "materials": 10,
+        "bones": 100,
+        "max_influences": 4
+      },
+      "expect": {
+        "height": [
+          1.8,
+          1.95
+        ],
+        "actions": [
+          "RigTest_ROM",
+          "Stance_DualDaggers_Idle",
+          "Stance_Halberd_Idle",
+          "Stance_Greatsword_Idle",
+          "Loop_Run_Daggers",
+          "Loop_Run_Halberd",
+          "Loop_Run_Greatsword",
+          "Atk_Daggers_L1",
+          "Atk_Daggers_Heavy",
+          "Atk_Halberd_L1",
+          "Atk_Greatsword_Heavy",
+          "Act_Dodge",
+          "Act_Hit",
+          "Act_Stagger",
+          "Act_Death"
+        ],
+        "sockets": [
+          "LeftHandWeapon",
+          "RightHandWeapon",
+          "LeftSheathBack",
+          "RightSheathBack"
+        ]
+      }
+    },
+    {
+      "id": "viking",
+      "kind": "character",
+      "status": "final-v1",
+      "build": "tools/blender/build_viking.py",
+      "source": "assets_src/characters/viking/viking.blend",
+      "collection": "Viking",
+      "output": "game/assets/characters/viking/viking.glb",
+      "animations": true,
+      "budget": {
+        "tris": 45000,
+        "materials": 10,
+        "bones": 100,
+        "max_influences": 4
+      },
+      "expect": {
+        "height": [
+          1.95,
+          2.15
+        ],
+        "_height_note": "includes helm horns",
+        "actions": [
+          "RigTest_ROM",
+          "Stance_DualDaggers_Idle",
+          "Stance_Halberd_Idle",
+          "Stance_Greatsword_Idle",
+          "Loop_Run_Daggers",
+          "Loop_Run_Halberd",
+          "Loop_Run_Greatsword",
+          "Atk_Daggers_L1",
+          "Atk_Daggers_Heavy",
+          "Atk_Halberd_L1",
+          "Atk_Greatsword_Heavy",
+          "Act_Dodge",
+          "Act_Hit",
+          "Act_Stagger",
+          "Act_Death"
+        ],
+        "sockets": [
+          "LeftHandWeapon",
+          "RightHandWeapon",
+          "LeftSheathBack",
+          "RightSheathBack"
+        ]
+      }
+    },
+    {
+      "id": "halberd",
+      "kind": "weapon",
+      "status": "final-v1",
+      "build": "tools/blender/build_halberd.py",
+      "source": "assets_src/weapons/halberd/halberd.blend",
+      "collection": "Export_Halberd",
+      "output": "game/assets/weapons/halberd/halberd.glb",
+      "animations": false,
+      "budget": {
+        "tris": 6000,
+        "materials": 5
+      },
+      "expect": {
+        "length": [
+          2.25,
+          2.45
+        ],
+        "nodes": [
+          "Socket_BladeBase",
+          "Socket_BladeTip",
+          "Socket_OffHand"
+        ]
+      }
+    },
+    {
+      "id": "handblade",
+      "kind": "weapon",
+      "status": "final-v1",
+      "build": "tools/blender/build_handblade.py",
+      "source": "assets_src/weapons/handblade/handblade.blend",
+      "collection": "Export_Handblade",
+      "output": "game/assets/weapons/handblade/handblade.glb",
+      "animations": false,
+      "budget": {
+        "tris": 3000,
+        "materials": 4
+      },
+      "expect": {
+        "length": [
+          0.46,
+          0.56
+        ],
+        "_length_note": "longest axis; the blade runs along socket +Z (knuckles)",
+        "nodes": [
+          "Socket_BladeBase",
+          "Socket_BladeTip"
+        ]
+      }
+    },
+    {
+      "id": "greatsword",
+      "kind": "weapon",
+      "status": "final-v1",
+      "build": "tools/blender/build_blades.py",
+      "source": "assets_src/weapons/greatsword/greatsword.blend",
+      "collection": "Export_Greatsword",
+      "output": "game/assets/weapons/greatsword/greatsword.glb",
+      "animations": false,
+      "budget": {
+        "tris": 4000,
+        "materials": 5
+      },
+      "expect": {
+        "length": [
+          2.0,
+          2.2
+        ],
+        "nodes": [
+          "Socket_BladeBase",
+          "Socket_BladeTip",
+          "Socket_OffHand"
+        ]
+      }
+    },
+    {
+      "id": "broadsword",
+      "kind": "weapon",
+      "status": "final-v1",
+      "build": "tools/blender/build_blades.py",
+      "source": "assets_src/weapons/broadsword/broadsword.blend",
+      "collection": "Export_Broadsword",
+      "output": "game/assets/weapons/broadsword/broadsword.glb",
+      "animations": false,
+      "budget": {
+        "tris": 3000,
+        "materials": 5
+      },
+      "expect": {
+        "length": [
+          1.65,
+          1.85
+        ],
+        "nodes": [
+          "Socket_BladeBase",
+          "Socket_BladeTip",
+          "Socket_OffHand"
+        ]
+      }
+    },
+    {
+      "id": "naginata",
+      "kind": "weapon",
+      "status": "final-v1",
+      "build": "tools/blender/build_blades.py",
+      "source": "assets_src/weapons/naginata/naginata.blend",
+      "collection": "Export_Naginata",
+      "output": "game/assets/weapons/naginata/naginata.glb",
+      "animations": false,
+      "budget": {
+        "tris": 5000,
+        "materials": 5
+      },
+      "expect": {
+        "length": [
+          2.4,
+          2.6
+        ],
+        "nodes": [
+          "Socket_BladeBase",
+          "Socket_BladeTip",
+          "Socket_OffHand"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "_comment": "Combat data per weapon family. Times are seconds from clip start (clips are 30 fps). reach in metres, arc in degrees (360 = all around), lunge = metres travelled during the swing, stagger = posture damage (>=1 staggers), finisher needs a staggered target.",
+  "Daggers": {
+    "stance": "Stance_DualDaggers_Idle", "run": "Loop_Run_Daggers", "block": "Stance_Block_Daggers", "run_speed": 6.2,
+    "light": [
+      {"anim": "Atk_Daggers_L1", "damage": 11, "reach": 1.8, "arc": 120, "hit": 0.27, "cancel": 0.40, "lunge": 1.2, "stagger": 0.15},
+      {"anim": "Atk_Daggers_L2", "damage": 12, "reach": 1.8, "arc": 110, "hit": 0.27, "cancel": 0.40, "lunge": 1.2, "stagger": 0.15},
+      {"anim": "Atk_Daggers_L3", "damage": 18, "reach": 2.2, "arc": 60, "hit": 0.33, "cancel": 0.55, "lunge": 2.6, "stagger": 0.35}
+    ],
+    "heavy": {"anim": "Atk_Daggers_Heavy", "damage": 26, "reach": 2.1, "arc": 360, "hit": 0.50, "cancel": 0.80, "lunge": 0.6, "stagger": 0.6},
+    "finisher": {"anim": "Atk_Daggers_Finisher", "damage": 999, "reach": 2.4, "arc": 140, "hit": 0.43, "cancel": 1.0, "lunge": 2.0, "stagger": 0}
+  },
+  "Halberd": {
+    "stance": "Stance_Halberd_Idle", "run": "Loop_Run_Halberd", "block": "Stance_Block_Halberd", "run_speed": 5.2,
+    "light": [
+      {"anim": "Atk_Halberd_L1", "damage": 17, "reach": 3.0, "arc": 150, "hit": 0.38, "cancel": 0.6, "lunge": 0.8, "stagger": 0.3},
+      {"anim": "Atk_Halberd_L2", "damage": 19, "reach": 3.4, "arc": 45, "hit": 0.35, "cancel": 0.6, "lunge": 1.6, "stagger": 0.35}
+    ],
+    "heavy": {"anim": "Atk_Halberd_Heavy", "damage": 40, "reach": 3.2, "arc": 70, "hit": 0.50, "cancel": 0.95, "lunge": 1.0, "stagger": 1.0},
+    "finisher": {"anim": "Atk_Halberd_Finisher", "damage": 999, "reach": 3.0, "arc": 120, "hit": 0.47, "cancel": 1.1, "lunge": 1.2, "stagger": 0}
+  },
+  "Greatsword": {
+    "stance": "Stance_Greatsword_Idle", "run": "Loop_Run_Greatsword", "block": "Stance_Block_Greatsword", "run_speed": 5.0,
+    "light": [
+      {"anim": "Atk_Greatsword_L1", "damage": 20, "reach": 2.6, "arc": 160, "hit": 0.38, "cancel": 0.65, "lunge": 0.9, "stagger": 0.35},
+      {"anim": "Atk_Greatsword_L2", "damage": 22, "reach": 2.8, "arc": 50, "hit": 0.35, "cancel": 0.65, "lunge": 1.5, "stagger": 0.4}
+    ],
+    "heavy": {"anim": "Atk_Greatsword_Heavy", "damage": 48, "reach": 2.8, "arc": 70, "hit": 0.50, "cancel": 1.0, "lunge": 1.0, "stagger": 1.0},
+    "finisher": {"anim": "Atk_Greatsword_Finisher", "damage": 999, "reach": 2.8, "arc": 120, "hit": 0.47, "cancel": 1.1, "lunge": 1.0, "stagger": 0}
+  }
+}

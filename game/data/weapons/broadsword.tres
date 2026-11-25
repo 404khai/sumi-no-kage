@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="WeaponDefinition" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/weapon_definition.gd" id="1_def"]
+[ext_resource type="PackedScene" path="res://assets/weapons/broadsword/broadsword.glb" id="2_w"]
+
+[resource]
+script = ExtResource("1_def")
+id = &"broadsword"
+display_name = "Iwakudaki Broadsword"
+category = 2
+weapon_scene = ExtResource("2_w")
+dual_wield = false
+grip_mode = 2
+main_hand_socket = &"RightHandWeapon"
+trail_lifetime = 0.35
+stance_idle = &"Stance_Greatsword_Idle"
+move_family = &"Greatsword"
+move_speed_scale = 0.8
+phantom_step_distance = 3.2

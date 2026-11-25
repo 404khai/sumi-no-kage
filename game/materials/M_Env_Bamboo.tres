@@ -1,0 +1,40 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://shaders/ink_outline.gdshader" id="1_a3tj8"]
+[ext_resource type="Texture2D" path="res://textures/ink/ink_wash_noise.png" id="2_xqwxs"]
+[ext_resource type="Shader" path="res://shaders/ink_surface.gdshader" id="3_lrnej"]
+[ext_resource type="Texture2D" path="res://textures/ink/brush_stroke.png" id="4_db87y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a0k7d"]
+render_priority = 0
+shader = ExtResource("1_a3tj8")
+shader_parameter/width = 0.0018
+shader_parameter/width_variation = null
+shader_parameter/max_distance_scale = null
+shader_parameter/ink_color = null
+shader_parameter/wash_noise = ExtResource("2_xqwxs")
+
+[resource]
+resource_name = "M_Env_Bamboo"
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_a0k7d")
+shader = ExtResource("3_lrnej")
+shader_parameter/base_color = Color(0.36, 0.37, 0.35, 1)
+shader_parameter/shadow_level = 0.5
+shader_parameter/band_low = null
+shader_parameter/band_high = null
+shader_parameter/band_softness = null
+shader_parameter/light_gain = null
+shader_parameter/wash_noise = ExtResource("2_xqwxs")
+shader_parameter/brush_tex = ExtResource("4_db87y")
+shader_parameter/use_triplanar = true
+shader_parameter/noise_scale = 1.5
+shader_parameter/band_noise = 0.25
+shader_parameter/streak_strength = null
+shader_parameter/streak_scale = null
+shader_parameter/rim_ink = 0.55
+shader_parameter/rim_width = 0.32
+shader_parameter/cavity_strength = 0.6
+shader_parameter/height_wash = null
+shader_parameter/dissolve_edge = null
+shader_parameter/dissolve_edge_color = null

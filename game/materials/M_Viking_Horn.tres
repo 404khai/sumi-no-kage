@@ -1,0 +1,40 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://shaders/ink_outline.gdshader" id="1_l6xcu"]
+[ext_resource type="Texture2D" path="res://textures/ink/ink_wash_noise.png" id="2_kg2qt"]
+[ext_resource type="Shader" path="res://shaders/ink_surface.gdshader" id="3_22r24"]
+[ext_resource type="Texture2D" path="res://textures/ink/brush_stroke.png" id="4_fbs6n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t4f4o"]
+render_priority = 0
+shader = ExtResource("1_l6xcu")
+shader_parameter/width = 0.0028
+shader_parameter/width_variation = null
+shader_parameter/max_distance_scale = null
+shader_parameter/ink_color = null
+shader_parameter/wash_noise = ExtResource("2_kg2qt")
+
+[resource]
+resource_name = "M_Viking_Horn"
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_t4f4o")
+shader = ExtResource("3_22r24")
+shader_parameter/base_color = Color(0.84, 0.82, 0.77, 1)
+shader_parameter/shadow_level = 0.6
+shader_parameter/band_low = null
+shader_parameter/band_high = null
+shader_parameter/band_softness = null
+shader_parameter/light_gain = null
+shader_parameter/wash_noise = ExtResource("2_kg2qt")
+shader_parameter/brush_tex = ExtResource("4_fbs6n")
+shader_parameter/use_triplanar = null
+shader_parameter/noise_scale = 1.5
+shader_parameter/band_noise = 0.25
+shader_parameter/streak_strength = 0.3
+shader_parameter/streak_scale = Vector2(1, 8)
+shader_parameter/rim_ink = 0.45
+shader_parameter/rim_width = 0.32
+shader_parameter/cavity_strength = 0.6
+shader_parameter/height_wash = null
+shader_parameter/dissolve_edge = null
+shader_parameter/dissolve_edge_color = null

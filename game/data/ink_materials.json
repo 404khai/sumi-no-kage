@@ -1,0 +1,475 @@
+{
+  "_comment": "Ink material library. Names are the contract with the Blender sources (M_<Asset>_<Part>). tools/build_materials.gd turns this into res://materials/*.tres. Colours are sRGB; see docs/art_bible.md for the tone scale.",
+  "defaults": {
+    "shader": "surface",
+    "outline": 0.0028,
+    "params": {
+      "shadow_level": 0.45,
+      "rim_ink": 0.55,
+      "rim_width": 0.32,
+      "cavity_strength": 0.6,
+      "band_noise": 0.25,
+      "noise_scale": 1.5
+    }
+  },
+  "materials": {
+    "M_Kage_Cloth": {
+      "color": [
+        0.115,
+        0.115,
+        0.12
+      ],
+      "params": {
+        "streak_strength": 0.25,
+        "streak_scale": [
+          2.0,
+          6.0
+        ]
+      }
+    },
+    "M_Kage_Hood": {
+      "color": [
+        0.075,
+        0.075,
+        0.08
+      ],
+      "params": {
+        "streak_strength": 0.3,
+        "streak_scale": [
+          3.0,
+          4.0
+        ]
+      }
+    },
+    "M_Kage_Wrap": {
+      "color": [
+        0.2,
+        0.2,
+        0.2
+      ],
+      "params": {
+        "streak_strength": 0.35,
+        "streak_scale": [
+          1.0,
+          10.0
+        ]
+      }
+    },
+    "M_Kage_Glove": {
+      "color": [
+        0.085,
+        0.085,
+        0.09
+      ]
+    },
+    "M_Kage_Tabi": {
+      "color": [
+        0.16,
+        0.16,
+        0.16
+      ]
+    },
+    "M_Kage_Sash": {
+      "color": [
+        0.26,
+        0.255,
+        0.25
+      ],
+      "params": {
+        "streak_strength": 0.3
+      }
+    },
+    "M_Kage_Skin": {
+      "color": [
+        0.74,
+        0.72,
+        0.68
+      ],
+      "outline": 0.0015,
+      "params": {
+        "rim_ink": 0.25,
+        "shadow_level": 0.6
+      }
+    },
+    "M_Kage_Eye": {
+      "color": [
+        0.03,
+        0.03,
+        0.03
+      ],
+      "outline": 0.0
+    },
+    "M_Ink_AccentRed": {
+      "color": [
+        0.62,
+        0.11,
+        0.08
+      ],
+      "params": {
+        "rim_ink": 0.35,
+        "shadow_level": 0.6,
+        "cavity_strength": 0.3
+      }
+    },
+    "M_Dagger_Blade": {
+      "shader": "blade",
+      "outline": 0.0015,
+      "params": {}
+    },
+    "M_Dagger_Wrap": {
+      "color": [
+        0.07,
+        0.07,
+        0.075
+      ],
+      "outline": 0.0015,
+      "params": {
+        "cavity_strength": 0.9
+      }
+    },
+    "M_Dagger_Fittings": {
+      "color": [
+        0.24,
+        0.235,
+        0.23
+      ],
+      "outline": 0.0015
+    },
+    "M_Dagger_Saya": {
+      "color": [
+        0.045,
+        0.045,
+        0.05
+      ],
+      "outline": 0.0015,
+      "params": {
+        "rim_ink": 0.2,
+        "shadow_level": 0.7
+      }
+    },
+    "M_Env_Ground": {
+      "color": [
+        0.86,
+        0.85,
+        0.82
+      ],
+      "outline": 0.0,
+      "params": {
+        "use_triplanar": true,
+        "shadow_level": 0.72,
+        "rim_ink": 0.0,
+        "band_noise": 0.5,
+        "noise_scale": 0.6,
+        "streak_strength": 0.1
+      }
+    },
+    "M_Env_Stone": {
+      "color": [
+        0.58,
+        0.575,
+        0.56
+      ],
+      "outline": 0.0022,
+      "params": {
+        "use_triplanar": true,
+        "shadow_level": 0.5,
+        "rim_ink": 0.35,
+        "band_noise": 0.45
+      }
+    },
+    "M_Env_Wood": {
+      "color": [
+        0.2,
+        0.195,
+        0.19
+      ],
+      "outline": 0.0022,
+      "params": {
+        "use_triplanar": true,
+        "streak_strength": 0.35
+      }
+    },
+    "M_Env_Roof": {
+      "color": [
+        0.11,
+        0.11,
+        0.115
+      ],
+      "outline": 0.0025,
+      "params": {
+        "use_triplanar": true,
+        "rim_ink": 0.4
+      }
+    },
+    "M_Env_Foliage": {
+      "color": [
+        0.14,
+        0.145,
+        0.14
+      ],
+      "outline": 0.003,
+      "params": {
+        "use_triplanar": true,
+        "band_noise": 0.6,
+        "rim_ink": 0.6,
+        "streak_strength": 0.4
+      }
+    },
+    "M_Env_Bamboo": {
+      "color": [
+        0.36,
+        0.37,
+        0.35
+      ],
+      "outline": 0.0018,
+      "params": {
+        "use_triplanar": true,
+        "shadow_level": 0.5
+      }
+    },
+    "M_Env_Cliff": {
+      "color": [
+        0.42,
+        0.42,
+        0.41
+      ],
+      "outline": 0.0,
+      "params": {
+        "use_triplanar": true,
+        "band_noise": 0.6,
+        "rim_ink": 0.3,
+        "noise_scale": 0.4,
+        "streak_strength": 0.3
+      }
+    },
+    "M_Knight_Plate": {
+      "color": [
+        0.4,
+        0.4,
+        0.4
+      ],
+      "outline": 0.0028,
+      "params": {
+        "shadow_level": 0.42,
+        "rim_ink": 0.6,
+        "band_noise": 0.35,
+        "streak_strength": 0.25,
+        "streak_scale": [
+          1.0,
+          3.0
+        ]
+      }
+    },
+    "M_Knight_Mail": {
+      "color": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "params": {
+        "streak_strength": 0.45,
+        "streak_scale": [
+          6.0,
+          12.0
+        ]
+      }
+    },
+    "M_Knight_Cloth": {
+      "color": [
+        0.085,
+        0.085,
+        0.09
+      ],
+      "params": {
+        "streak_strength": 0.3,
+        "streak_scale": [
+          2.0,
+          5.0
+        ]
+      }
+    },
+    "M_Knight_Under": {
+      "color": [
+        0.16,
+        0.16,
+        0.165
+      ]
+    },
+    "M_Knight_Leather": {
+      "color": [
+        0.4,
+        0.385,
+        0.36
+      ],
+      "params": {
+        "streak_strength": 0.3
+      }
+    },
+    "M_Viking_Skin": {
+      "color": [
+        0.66,
+        0.64,
+        0.6
+      ],
+      "outline": 0.0024,
+      "params": {
+        "shadow_level": 0.55,
+        "rim_ink": 0.45,
+        "cavity_strength": 0.95
+      }
+    },
+    "M_Viking_Leather": {
+      "color": [
+        0.24,
+        0.235,
+        0.23
+      ],
+      "params": {
+        "streak_strength": 0.3
+      }
+    },
+    "M_Viking_Metal": {
+      "color": [
+        0.5,
+        0.5,
+        0.49
+      ],
+      "params": {
+        "rim_ink": 0.5
+      }
+    },
+    "M_Viking_Helm": {
+      "color": [
+        0.14,
+        0.14,
+        0.145
+      ],
+      "params": {
+        "rim_ink": 0.5
+      }
+    },
+    "M_Viking_Horn": {
+      "color": [
+        0.84,
+        0.82,
+        0.77
+      ],
+      "params": {
+        "shadow_level": 0.6,
+        "rim_ink": 0.45,
+        "streak_strength": 0.3,
+        "streak_scale": [
+          1.0,
+          8.0
+        ]
+      }
+    },
+    "M_Viking_Fur": {
+      "color": [
+        0.88,
+        0.87,
+        0.83
+      ],
+      "outline": 0.0032,
+      "params": {
+        "shadow_level": 0.55,
+        "rim_ink": 0.7,
+        "band_noise": 0.6,
+        "streak_strength": 0.5,
+        "streak_scale": [
+          8.0,
+          2.0
+        ]
+      }
+    },
+    "M_Viking_Hair": {
+      "color": [
+        0.3,
+        0.29,
+        0.28
+      ],
+      "params": {
+        "streak_strength": 0.5,
+        "streak_scale": [
+          2.0,
+          10.0
+        ]
+      }
+    },
+    "M_Viking_Cape": {
+      "color": [
+        0.42,
+        0.075,
+        0.06
+      ],
+      "params": {
+        "rim_ink": 0.5,
+        "shadow_level": 0.5,
+        "streak_strength": 0.35,
+        "streak_scale": [
+          2.0,
+          6.0
+        ]
+      }
+    },
+    "M_Halberd_Steel": {
+      "color": [
+        0.88,
+        0.875,
+        0.86
+      ],
+      "outline": 0.0018,
+      "params": {
+        "shadow_level": 0.7,
+        "rim_ink": 0.25,
+        "cavity_strength": 0.3,
+        "streak_strength": 0.2
+      }
+    },
+    "M_Halberd_Shaft": {
+      "color": [
+        0.11,
+        0.105,
+        0.1
+      ],
+      "outline": 0.0015
+    },
+    "M_Halberd_Wrap": {
+      "color": [
+        0.05,
+        0.05,
+        0.055
+      ],
+      "outline": 0.0015,
+      "params": {
+        "cavity_strength": 0.9
+      }
+    },
+    "M_Halberd_Fittings": {
+      "color": [
+        0.3,
+        0.295,
+        0.29
+      ],
+      "outline": 0.0015
+    },
+    "M_Greatsword_Blade": {
+      "color": [
+        0.4,
+        0.12,
+        0.1
+      ],
+      "outline": 0.0018,
+      "params": {
+        "shadow_level": 0.5,
+        "rim_ink": 0.5,
+        "streak_strength": 0.35,
+        "streak_scale": [
+          1.0,
+          6.0
+        ],
+        "cavity_strength": 0.4
+      }
+    }
+  }
+}

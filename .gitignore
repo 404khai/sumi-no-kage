@@ -1,0 +1,8 @@
+# Godot
+game/.godot/
+*.translation
+# Pipeline outputs that are always regenerated
+build/
+docs/renders/wip/
+*.blend1
+.DS_Store

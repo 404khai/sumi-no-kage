@@ -1,0 +1,6 @@
+# Binary assets (plain git; switch to Git LFS if sources grow large)
+*.blend binary
+*.glb binary
+*.png binary
+*.jpg binary
+*.jpeg binary

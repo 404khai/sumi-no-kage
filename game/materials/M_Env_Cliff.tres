@@ -1,0 +1,29 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://shaders/ink_surface.gdshader" id="1_pjts1"]
+[ext_resource type="Texture2D" path="res://textures/ink/brush_stroke.png" id="2_4wtlp"]
+[ext_resource type="Texture2D" path="res://textures/ink/ink_wash_noise.png" id="3_rpbj5"]
+
+[resource]
+resource_name = "M_Env_Cliff"
+render_priority = 0
+shader = ExtResource("1_pjts1")
+shader_parameter/base_color = Color(0.42, 0.42, 0.41, 1)
+shader_parameter/shadow_level = 0.45
+shader_parameter/band_low = null
+shader_parameter/band_high = null
+shader_parameter/band_softness = null
+shader_parameter/light_gain = null
+shader_parameter/wash_noise = ExtResource("3_rpbj5")
+shader_parameter/brush_tex = ExtResource("2_4wtlp")
+shader_parameter/use_triplanar = true
+shader_parameter/noise_scale = 0.4
+shader_parameter/band_noise = 0.6
+shader_parameter/streak_strength = 0.3
+shader_parameter/streak_scale = null
+shader_parameter/rim_ink = 0.3
+shader_parameter/rim_width = 0.32
+shader_parameter/cavity_strength = 0.6
+shader_parameter/height_wash = null
+shader_parameter/dissolve_edge = null
+shader_parameter/dissolve_edge_color = null

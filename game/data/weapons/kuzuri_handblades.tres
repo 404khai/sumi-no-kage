@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="WeaponDefinition" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/weapon_definition.gd" id="1_def"]
+[ext_resource type="PackedScene" path="res://assets/weapons/handblade/handblade.glb" id="2_hb"]
+
+[resource]
+script = ExtResource("1_def")
+id = &"kuzuri"
+display_name = "Kuzuri — Punch Blades"
+category = 0
+weapon_scene = ExtResource("2_hb")
+dual_wield = true
+grip_mode = 0
+trail_lifetime = 0.25
+stance_idle = &"Stance_DualDaggers_Idle"
+move_speed_scale = 1.2
+phantom_step_distance = 4.2
+move_family = &"Daggers"

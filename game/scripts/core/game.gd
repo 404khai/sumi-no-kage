@@ -1,0 +1,85 @@
+## Autoload "Game": roster, selection, movesets and input bindings.
+## Input actions are registered in code so the project stays text-reviewable.
+extends Node
+
+const ROSTER: Array[CharacterDefinition] = [
+	preload("res://data/characters/kage.tres"),
+	preload("res://data/characters/knight.tres"),
+	preload("res://data/characters/viking.tres"),
+]
+const WEAPONS: Array[WeaponDefinition] = [
+	preload("res://data/weapons/kagenui_daggers.tres"),
+	preload("res://data/weapons/kuzuri_handblades.tres"),
+	preload("res://data/weapons/halberd.tres"),
+	preload("res://data/weapons/naginata.tres"),
+	preload("res://data/weapons/greatsword.tres"),
+	preload("res://data/weapons/broadsword.tres"),
+]
+const MENU_SCENE := "res://scenes/menu/main_menu.tscn"
+const GAME_SCENE := "res://scenes/game/game.tscn"
+
+var character: CharacterDefinition = ROSTER[0]
+var weapon: WeaponDefinition = ROSTER[0].default_weapon
+var movesets: Dictionary = {}
+var mouse_sensitivity := 0.0025
+var autoplay := false   # bot drives the player (automated playtests / captures)
+
+
+func _ready() -> void:
+	movesets = JSON.parse_string(FileAccess.get_file_as_string("res://data/movesets.json"))
+	autoplay = "--autoplay" in OS.get_cmdline_user_args()
+	_bind_inputs()
+
+
+func moveset(w: WeaponDefinition) -> Dictionary:
+	return movesets[String(w.move_family)]
+
+
+func start_game() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file(GAME_SCENE)
+
+
+func to_menu() -> void:
+	get_tree().paused = false
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	get_tree().change_scene_to_file(MENU_SCENE)
+
+
+func _bind_inputs() -> void:
+	var keys := {
+		"move_forward": [KEY_W], "move_back": [KEY_S], "move_left": [KEY_A], "move_right": [KEY_D],
+		"dodge": [KEY_SPACE], "block": [KEY_SHIFT], "phantom_step": [KEY_E], "finisher": [KEY_F],
+		"lock_on": [KEY_TAB], "pause": [KEY_ESCAPE],
+		"weapon_1": [KEY_1], "weapon_2": [KEY_2], "weapon_3": [KEY_3], "weapon_4": [KEY_4], "weapon_5": [KEY_5],
+		"weapon_6": [KEY_6],
+	}
+	var pads := {"dodge": JOY_BUTTON_A, "block": JOY_BUTTON_LEFT_SHOULDER, "phantom_step": JOY_BUTTON_B,
+		"finisher": JOY_BUTTON_Y, "pause": JOY_BUTTON_START, "attack_light": JOY_BUTTON_X,
+		"attack_heavy": JOY_BUTTON_RIGHT_SHOULDER}
+	for action in keys:
+		_ensure(action)
+		for k in keys[action]:
+			var e := InputEventKey.new()
+			e.physical_keycode = k
+			InputMap.action_add_event(action, e)
+	for action in ["attack_light", "attack_heavy"]:
+		_ensure(action)
+		var m := InputEventMouseButton.new()
+		m.button_index = MOUSE_BUTTON_LEFT if action == "attack_light" else MOUSE_BUTTON_RIGHT
+		InputMap.action_add_event(action, m)
+	for action in pads:
+		var j := InputEventJoypadButton.new()
+		j.button_index = pads[action]
+		InputMap.action_add_event(action, j)
+	for pair in [["move_left", JOY_AXIS_LEFT_X, -1.0], ["move_right", JOY_AXIS_LEFT_X, 1.0],
+			["move_forward", JOY_AXIS_LEFT_Y, -1.0], ["move_back", JOY_AXIS_LEFT_Y, 1.0]]:
+		var a := InputEventJoypadMotion.new()
+		a.axis = pair[1]
+		a.axis_value = pair[2]
+		InputMap.action_add_event(pair[0], a)
+
+
+func _ensure(action: String) -> void:
+	if not InputMap.has_action(action):
+		InputMap.add_action(action, 0.25)

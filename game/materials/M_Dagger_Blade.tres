@@ -1,0 +1,30 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://shaders/ink_outline.gdshader" id="1_m3ea7"]
+[ext_resource type="Texture2D" path="res://textures/ink/ink_wash_noise.png" id="2_nhlkb"]
+[ext_resource type="Shader" path="res://shaders/ink_blade.gdshader" id="3_3w1es"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yrqjh"]
+render_priority = 0
+shader = ExtResource("1_m3ea7")
+shader_parameter/width = 0.0015
+shader_parameter/width_variation = null
+shader_parameter/max_distance_scale = null
+shader_parameter/ink_color = null
+shader_parameter/wash_noise = ExtResource("2_nhlkb")
+
+[resource]
+resource_name = "M_Dagger_Blade"
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_yrqjh")
+shader = ExtResource("3_3w1es")
+shader_parameter/steel_color = null
+shader_parameter/jigane_color = null
+shader_parameter/hamon_position = null
+shader_parameter/hamon_wave = null
+shader_parameter/hamon_frequency = null
+shader_parameter/inlay_color = null
+shader_parameter/inlay_strength = null
+shader_parameter/shadow_level = 0.45
+shader_parameter/wash_noise = ExtResource("2_nhlkb")
+shader_parameter/glint_strength = null

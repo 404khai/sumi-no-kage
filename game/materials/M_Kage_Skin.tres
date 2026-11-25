@@ -1,0 +1,40 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://shaders/ink_outline.gdshader" id="1_3jfov"]
+[ext_resource type="Texture2D" path="res://textures/ink/ink_wash_noise.png" id="2_yx1p2"]
+[ext_resource type="Shader" path="res://shaders/ink_surface.gdshader" id="3_gc4kd"]
+[ext_resource type="Texture2D" path="res://textures/ink/brush_stroke.png" id="4_fv8an"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fq1kq"]
+render_priority = 0
+shader = ExtResource("1_3jfov")
+shader_parameter/width = 0.0015
+shader_parameter/width_variation = null
+shader_parameter/max_distance_scale = null
+shader_parameter/ink_color = null
+shader_parameter/wash_noise = ExtResource("2_yx1p2")
+
+[resource]
+resource_name = "M_Kage_Skin"
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_fq1kq")
+shader = ExtResource("3_gc4kd")
+shader_parameter/base_color = Color(0.74, 0.72, 0.68, 1)
+shader_parameter/shadow_level = 0.6
+shader_parameter/band_low = null
+shader_parameter/band_high = null
+shader_parameter/band_softness = null
+shader_parameter/light_gain = null
+shader_parameter/wash_noise = ExtResource("2_yx1p2")
+shader_parameter/brush_tex = ExtResource("4_fv8an")
+shader_parameter/use_triplanar = null
+shader_parameter/noise_scale = 1.5
+shader_parameter/band_noise = 0.25
+shader_parameter/streak_strength = null
+shader_parameter/streak_scale = null
+shader_parameter/rim_ink = 0.25
+shader_parameter/rim_width = 0.32
+shader_parameter/cavity_strength = 0.6
+shader_parameter/height_wash = null
+shader_parameter/dissolve_edge = null
+shader_parameter/dissolve_edge_color = null
